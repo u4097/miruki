@@ -3,6 +3,7 @@ package com.oleg.miruki
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.View
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -11,37 +12,46 @@ import kotlinx.android.synthetic.main.webview_holder.*
 
 class MainActivity : AppCompatActivity() {
 
-    private var url: String? = null
+	private var url: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+	override fun onCreate(savedInstanceState: Bundle?) {
+		super.onCreate(savedInstanceState)
+		setContentView(R.layout.activity_main)
 
-        url = "https://miruki.ru"
+		url = "https://miruki.ru"
 //        url = "https://yandex.ru"
 
-        webView.webViewClient = MyWebViewClient()
-        webView.isHorizontalScrollBarEnabled = false
-        // включаем поддержку JavaScript
-        webView.settings.javaScriptEnabled = true
-        webView.settings.loadWithOverviewMode = true
-        webView.settings.useWideViewPort = true
-        // указываем страницу загрузки
-        webView.loadUrl(url)
-    }
+		webView.webViewClient = MyWebViewClient()
+		webView.isHorizontalScrollBarEnabled = false
+		// включаем поддержку JavaScript
+		webView.settings.javaScriptEnabled = true
+		webView.settings.loadWithOverviewMode = true
+		webView.settings.useWideViewPort = true
+		// указываем страницу загрузки
+		webView.loadUrl(url)
+	}
 
 
-    private inner class MyWebViewClient : WebViewClient() {
+	private inner class MyWebViewClient : WebViewClient() {
 
-        override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
-            super.onPageStarted(view, url, favicon)
-            progressBar.visibility = View.VISIBLE
-        }
+		override fun onPageStarted(view: WebView, url: String, favicon: Bitmap?) {
+			super.onPageStarted(view, url, favicon)
+			progressBar.visibility = View.VISIBLE
+		}
 
-        override fun onPageFinished(view: WebView, url: String) {
-            super.onPageFinished(view, url)
-            progressBar.visibility = View.GONE
-        }
+		override fun onPageFinished(view: WebView, url: String) {
+			super.onPageFinished(view, url)
+			progressBar.visibility = View.GONE
+		}
 
-    }
+	}
+
+	override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+		if ((keyCode == KeyEvent.KEYCODE_BACK) && webView.canGoBack()) {
+			webView.goBack()
+			return true
+		}
+		return super.onKeyDown(keyCode, event)
+	}
+
 }
