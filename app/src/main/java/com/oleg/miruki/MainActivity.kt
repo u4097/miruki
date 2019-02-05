@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
+import android.webkit.JsResult
+import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,11 +24,20 @@ class MainActivity : AppCompatActivity() {
 //        url = "https://yandex.ru"
 
 		webView.webViewClient = MyWebViewClient()
+//		webView.clearCache(true)
 		webView.isHorizontalScrollBarEnabled = false
 		// включаем поддержку JavaScript
 		webView.settings.javaScriptEnabled = true
+		webView.settings.domStorageEnabled = true
 		webView.settings.loadWithOverviewMode = true
 		webView.settings.useWideViewPort = true
+		webView.webChromeClient = object : WebChromeClient() {
+			override fun onJsAlert(view: WebView?, url: String?, message: String?, result: JsResult?): Boolean {
+//				return super.onJsAlert(view, url, message, result)
+				return false
+			}
+		}
+
 		// указываем страницу загрузки
 		webView.loadUrl(url)
 	}
