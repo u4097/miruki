@@ -11,6 +11,7 @@ local.properties
 .idea
 .DS_Store
 build
+*.jks
 captures
 .externalNativeBuild
 app/*.iml
