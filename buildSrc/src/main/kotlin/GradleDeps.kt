@@ -1,6 +1,9 @@
-object Release {
-	const val versionName = "v0.0"
-	const val versionCode = 0
+object AppVersion {
+	// App version information
+	const val majorAppVersion = 1
+	const val minorAppVersion = 1
+	const val patchAppVersion = 1
+	const val buildAppVersion = 0
 }
 
 object ApplicationId {
@@ -13,27 +16,18 @@ object Android {
 	const val targetSdkVersion = 28
 }
 
-object AppVersion {
-	// App version information
-	const val majorAppVersion = 1
-	const val minorAppVersion = 1
-	const val patchAppVersion = 0
-	const val buildAppVersion = 0
-}
-
 
 object Modules {
 	const val app = ":app"
-//	const val preference = ":preference"
 }
 
 object Versions {
-	const val gradle = "3.5.0-alpha03"
+	const val gradle = "3.5.0-alpha04"
 	const val googleServicies = "4.2.0"
-	const val kotlin = "1.3.20"
-	const val androidx = "1.0.2"
+	const val kotlin = "1.3.21"
+	const val androidx = "1.1.0-alpha02"
 	const val lifecycle = "2.0.0"
-	const val ktx = "1.0.0-alpha1"
+	const val ktx = "1.1.0-alpha04"
 
 
 	const val retrofit = "2.5.0"
@@ -45,9 +39,15 @@ object Versions {
 
 	const val chuck = "1.1.0"
 	const val timber = "4.7.1"
-	const val fabric = "1.27.0"
 	const val firebase = "16.0.4"
 	const val firebaseMessaging = "17.3.4"
+	const val constraintLayout = "2.0.0-alpha3"
+	const val  testEspresso = "3.1.2-alpha01"
+	const val junit = "4.13-beta-2"
+    const val junitExt = "1.1.1-alpha01"
+
+	const val fabric = "1.27.0"
+	const val crashlytics = "2.9.9"
 }
 
 
@@ -57,7 +57,7 @@ object Libraries {
 	const val ktx = "androidx.core:core-ktx:${Versions.ktx}"
 	const val lifecycle = "android.arch.lifecycle:extensions:${Versions.lifecycle}"
 
-	const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.0-alpha3"
+	const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 	const val fresco = "com.facebook.fresco:fresco:1.11.0"
 
 	const val lottie = "com.airbnb.android:lottie:2.5.4"
