@@ -65,11 +65,11 @@ dependencies {
     implementation("androidx.appcompat:appcompat:${Versions.androidx}")
     implementation("androidx.core:core-ktx:${Versions.ktx}")
     implementation("androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}")
+    implementation("com.crashlytics.sdk.android:crashlytics:${Versions.crashlytics}")
 
     testImplementation("junit:junit:${Versions.junit}")
     androidTestImplementation("androidx.test.ext:junit:${Versions.junitExt}")
     androidTestImplementation("androidx.test.espresso:espresso-core:${Versions.testEspresso}")
 
-    implementation("com.crashlytics.sdk.android:crashlytics:${Versions.crashlytics}")
 
 }
