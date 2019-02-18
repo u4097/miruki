@@ -28,7 +28,7 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:${Versions.gradle}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
-        classpath ("io.fabric.tools:gradle:1.27.1")
+        classpath ("io.fabric.tools:gradle:${Versions.fabric}")
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files

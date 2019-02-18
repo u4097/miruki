@@ -46,7 +46,7 @@ object Versions {
 	const val junit = "4.13-beta-2"
     const val junitExt = "1.1.1-alpha01"
 
-	const val fabric = "1.27.0"
+	const val fabric = "1.27.1"
 	const val crashlytics = "2.9.9"
 }
 
