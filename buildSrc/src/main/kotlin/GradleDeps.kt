@@ -28,7 +28,7 @@ object Modules {
 }
 
 object Versions {
-	const val gradle = "3.5.0-alpha03"
+	const val gradle = "3.6.0-alpha03"
 	const val googleServicies = "4.2.0"
 	const val kotlin = "1.3.20"
 	const val androidx = "1.0.2"
