@@ -20,7 +20,8 @@ class MainActivity : AppCompatActivity() {
 		super.onCreate(savedInstanceState)
 		setContentView(R.layout.activity_main)
 
-		url = "https://miruki.ru"
+//		url = "https://miruki.ru"
+		url = "https://rolly-darom.ru"
 //        url = "https://yandex.ru"
 
 		webView.webViewClient = MyWebViewClient()
